@@ -2,6 +2,7 @@ package ru.yandex.practicum;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,9 +58,8 @@ public class TestOrderScooter {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://qa-scooter.praktikum-services.ru/");
-
     }
-     /*@Before
+    /* @Before
      public void setUp() {
          WebDriverManager.firefoxdriver().setup();
              FirefoxOptions options = new FirefoxOptions();
@@ -68,7 +68,6 @@ public class TestOrderScooter {
          driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          driver.manage().window().maximize();
          driver.get("https://qa-scooter.praktikum-services.ru/");
-
      }*/
     @Test
     public void orderScooter() {
@@ -78,7 +77,7 @@ public class TestOrderScooter {
         orderPage.fillOrderPage(name, surName, adress, pnoneNumber, metroStation);
         RentPage rentPage = new RentPage(driver);
         rentPage.fillRentPage(deliveryDate, deliveryDay);
-        assertTrue(rentPage.isOrderDisplayed());
+        Assert.assertTrue(rentPage.isOrderDisplayed().contains("Заказ оформлен"));
     }
     @After
     public void tearDown() {

@@ -26,7 +26,6 @@ public class MainPage {
             element.click();
         }
     }
-
     public void clickQuestion(int index) {
         driver.findElements(questionButton).get(index).click();
     }

@@ -2,7 +2,6 @@ package ru.practicum.yandex;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class RentPage {
     private final WebDriver driver;
     //Локатор для поля когда привезти самокат
@@ -38,11 +37,7 @@ public class RentPage {
     public void clickOrderYesButton() {
         driver.findElement(getOrderYesButton).click();
     }
-    public boolean isOrderDisplayed() {
-        return driver.findElement(orderInfo).isDisplayed();
-    }
-    public String getOrderText () {
-        return driver.findElement(orderText).getText();
+    public String isOrderDisplayed() {return driver.findElement(orderInfo).getText();
     }
     public void fillRentPage(String rentDate, int rentTimeDays) {
         this.setRentDate(rentDate);

@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 
 public class OrderPage {
-
     private final WebDriver driver;
     //Локатор для поля имя
     private final By name = By.xpath(".//input[@placeholder='* Имя']");
@@ -23,10 +22,7 @@ public class OrderPage {
     private final By phoneNumber = By.xpath(".//input[contains(@placeholder,'Телефон')]");
     //Локатор для кнопки далее
     private final By nextButton = By.xpath(".//button[text()='Далее']");
-
-
     public OrderPage(WebDriver driver){
-
         this.driver = driver;
     }
     public void setName(String newName) {
@@ -69,5 +65,4 @@ public class OrderPage {
         this.setMetro(metroStation);
         this.clickButtonNext();
     }
-
 }
